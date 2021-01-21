@@ -4,14 +4,18 @@ const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
 var engine, world;
+// var score = 0;
+var bg;
 
 function preload(){
+  
   p_Img = loadImage("polygon.png");
 }
 
 function setup() {
   var canvas = createCanvas(1600,600);
-
+  // getBgImg();
+  
   engine = Engine.create();
   world = engine.world;
 
@@ -61,14 +65,16 @@ function setup() {
 }
 
 function draw() {
-  background(56,44,44);
+  // if(bg){
+    background(56,44,44);
   Engine.update(engine); 
   
   textSize(20);
   fill(255);
   text("Drag the Hexagonal Stone and Release it, to launch it towards the blocks", 450, 70);
   text("Press Space to get a second chance to play",1100,550);
-  
+  // text("SCORE: "+ score , 1300,75);
+
  g1.display();
  g2.display();
  fill(134,206,234);
@@ -108,7 +114,7 @@ function draw() {
  image(p_Img,polygon.position.x,polygon.position.y,40,40);
 
  slingShot.display();
-  
+
 }               
 
 function mouseDragged(){
@@ -122,6 +128,7 @@ function mouseReleased(){
 
 function keyPressed(){
   if(keyCode === 32){
-      slingShot.attach(this.polygon);
+    slingShot.attach(this.polygon);
   }
 }
+
