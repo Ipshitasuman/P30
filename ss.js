@@ -21,7 +21,7 @@ class SlingShot{
     }
 
     display(){
-        
+        if(this.sling.bodyA){
         var pointA = this.sling.bodyA.position;
         var pointB = this.pointB;
         push();
@@ -29,7 +29,7 @@ class SlingShot{
         strokeWeight(7);
         line(pointA.x, pointA.y, pointB.x, pointB.y);
         pop();
-        
+        } 
     }
     
 }
