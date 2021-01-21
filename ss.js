@@ -21,15 +21,15 @@ class SlingShot{
     }
 
     display(){
-        if(this.sling.bodyA){
+       if(this.sling.bodyA){ 
         var pointA = this.sling.bodyA.position;
         var pointB = this.pointB;
         push();
         stroke("aqua");
         strokeWeight(7);
-        line(pointA.x, pointA.y, pointB.x, pointB.y);
+        line(pointB.x, pointB.y,pointA.x, pointA.y);
         pop();
-        } 
+       }
     }
     
 }
